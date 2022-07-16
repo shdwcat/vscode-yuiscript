@@ -1,0 +1,55 @@
+{
+    "name": "vscode-yuiscript",
+    "displayName": "vscode-yuiscript",
+    "description": "VS Code language support for embedded YuiScript",
+    "categories": [
+        "Programming Languages"
+    ],
+    "keywords": [
+        "Languages",
+        "yui",
+        "gms2"
+    ],
+    "author": {
+        "name": "shdwcat",
+        "url": "https://github.com/shdwcat"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/shdwcat/vscode-yuiscript.git"
+    },
+    "license": "MIT",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.69.0"
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run convert",
+        "convert": "js-yaml syntaxes/yuiscript.tmLanguage.yaml > syntaxes/yuiscript.tmLanguage.json"
+    },
+    "contributes": {
+        "languages": [
+            {
+                "id": "yuiscript",
+                "aliases": [
+                    "YuiScript",
+                    "yuiscript"
+                ],
+                "extensions": [
+                    ".ys"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "yuiscript",
+                "scopeName": "source.yuiscript",
+                "path": "./syntaxes/yuiscript.tmLanguage.json"
+            }
+        ]
+    },
+    "devDependencies": {
+        "js-yaml": "^4.1.0"
+    }
+}
